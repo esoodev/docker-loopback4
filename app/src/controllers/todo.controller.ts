@@ -1,3 +1,4 @@
+import {inject} from '@loopback/core';
 import {
   Count,
   CountSchema,
@@ -14,13 +15,16 @@ import {
   patch,
   del,
   requestBody,
+  HttpErrors,
 } from '@loopback/rest';
 import {Todo} from '../models';
 import {TodoRepository} from '../repositories';
+import {GeocoderService} from '../services';
 
 export class TodoController {
   constructor(
-    @repository(TodoRepository) public todoRepository: TodoRepository,
+    @repository(TodoRepository) protected todoRepository: TodoRepository,
+    @inject('services.GeocoderService') protected geoService: GeocoderService,
   ) {}
 
   @post('/todos', {
@@ -32,6 +36,18 @@ export class TodoController {
     },
   })
   async create(@requestBody() todo: Todo): Promise<Todo> {
+    // return await this.todoRepository.create(todo);
+    if (!todo.title) {
+      throw new HttpErrors.BadRequest('title is required');
+    }
+
+    if (todo.remindAtAddress) {
+      // TODO handle "address not found"
+      const geo = await this.geoService.geocode(todo.remindAtAddress);
+      // Encode the coordinates as "lat,lng"
+      todo.remindAtGeo = `${geo[0].y},${geo[0].x}`;
+    }
+
     return await this.todoRepository.create(todo);
   }
 
