@@ -1,4 +1,4 @@
-
+{
   "name": "getting-started",
   "version": "1.0.0",
   "description": "Getting started tutorial",
@@ -50,7 +50,7 @@
     "@loopback/openapi-v3": "^1.0.1",
     "@loopback/repository": "^1.0.1",
     "@loopback/rest": "^1.0.1",
-    "@loopback/service-proxy": "^1.0.0"
+    "@loopback/service-proxy": "^1.0.0",
     "@loopback/service-proxy": "^1.0.0",
     "loopback-connector-rest": "^3.4.1"
   },
