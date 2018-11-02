@@ -11,16 +11,12 @@ services:
             - 3000:3000
             - 8080:8080
         environment:
-            - 'DB_PORT=3306'
+            - 'DB_PORT=11210'
             - 'DB_HOST=database'
 
     # The Database
     database:
-        image: mysql:5.7
-        environment:
-            - 'MYSQL_DATABASE=database'
-            - 'MYSQL_USER=esoodev'
-            - 'MYSQL_PASSWORD=password'
-            - 'MYSQL_ROOT_PASSWORD=password'
+        image: couchbase:community
         ports:
-            - '33061:3306'
+            - 8091-8094:8091-8094
+            - 11210:11210
