@@ -2,5 +2,5 @@
   "name": "memorydb",
   "connector": "memory",
   "localStorage": "",
-  "file": "./data/db.json"
+  "file": "./data/memorydb.json"
 }
