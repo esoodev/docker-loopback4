@@ -17,9 +17,6 @@ services:
     # The Database
     database:
         image: mysql:5.7
-        # Uncomment below if you want to locally mount the database for whatever reason.
-        # volumes:
-        #     - ./dbdata:/var/lib/mysql
         environment:
             - 'MYSQL_DATABASE=database'
             - 'MYSQL_USER=esoodev'
