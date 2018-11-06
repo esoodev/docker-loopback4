@@ -25,7 +25,7 @@ docker-compose up --build
 -   [Docker](https://www.docker.com/)
 -   [Loopback4](http://v4.loopback.io/)
 -   [NodeJS](https://nodejs.org/en/)
--   [MySQL](https://rometools.github.io/rome/)
+-   [MongoDB](https://www.mongodb.com/)
 
 ## Authors
 
