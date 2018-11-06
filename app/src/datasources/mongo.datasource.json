@@ -1,0 +1,9 @@
+{
+  "name": "mongo",
+  "connector": "mongodb",
+  "host": "db",
+  "port": 27017,
+  "user": "loopback-user",
+  "password": "secret",
+  "database": "loopback-db"
+}

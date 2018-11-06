@@ -1,5 +1,22 @@
 version: '2'
 services:
+
+    # The Database
+    db:
+        image: 'mongo:4'
+        restart: always
+        ports:
+            - '27017:27017'
+        volumes:
+            - ./mongodb/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+            - ./mongodb/data/db:/data/db
+            - ./mongodb/data/logs:/data/logs
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: secret
+            MONGO_INITDB_DATABASE: loopback-db
+        command: mongod --smallfiles --logpath=/data/logs/log # --quiet
+
     # The Application / Server
     app:
         build:
@@ -8,15 +25,22 @@ services:
         volumes:
             - ./app:/app
         ports:
-            - 3000:3000
-            - 8080:8080
-        environment:
-            - 'DB_PORT=11210'
-            - 'DB_HOST=database'
+            - '3000:3000'
+            - '8080:8080'
+        links:
+            - 'db'
+        depends_on: ['db']
 
     # The Database
-    database:
-        image: couchbase:community
+    mongo-express:
+        image: 'mongo-express'
+        restart: always
         ports:
-            - 8091-8094:8091-8094
-            - 11210:11210
+            - '8081:8081'
+        environment:
+            ME_CONFIG_MONGODB_SERVER: db
+            ME_CONFIG_MONGODB_ADMINUSERNAME: root
+            ME_CONFIG_MONGODB_ADMINPASSWORD: secret
+        links:
+            - 'db'
+        depends_on: ['db']

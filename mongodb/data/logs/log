@@ -1,0 +1,42 @@
+2018-11-06T08:21:03.045+0000 I CONTROL  [initandlisten] MongoDB starting : pid=1 port=27017 dbpath=/data/db 64-bit host=3a02f8932fd7
+2018-11-06T08:21:03.046+0000 I CONTROL  [initandlisten] db version v4.0.3
+2018-11-06T08:21:03.046+0000 I CONTROL  [initandlisten] git version: 7ea530946fa7880364d88c8d8b6026bbc9ffa48c
+2018-11-06T08:21:03.047+0000 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2g  1 Mar 2016
+2018-11-06T08:21:03.047+0000 I CONTROL  [initandlisten] allocator: tcmalloc
+2018-11-06T08:21:03.048+0000 I CONTROL  [initandlisten] modules: none
+2018-11-06T08:21:03.048+0000 I CONTROL  [initandlisten] build environment:
+2018-11-06T08:21:03.049+0000 I CONTROL  [initandlisten]     distmod: ubuntu1604
+2018-11-06T08:21:03.051+0000 I CONTROL  [initandlisten]     distarch: x86_64
+2018-11-06T08:21:03.052+0000 I CONTROL  [initandlisten]     target_arch: x86_64
+2018-11-06T08:21:03.052+0000 I CONTROL  [initandlisten] options: { net: { bindIpAll: true }, security: { authorization: "enabled" }, storage: { mmapv1: { smallFiles: true } }, systemLog: { destination: "file", path: "/data/logs/log" } }
+2018-11-06T08:21:03.068+0000 W STORAGE  [initandlisten] Detected unclean shutdown - /data/db/mongod.lock is not empty.
+2018-11-06T08:21:03.088+0000 I STORAGE  [initandlisten] Detected data files in /data/db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2018-11-06T08:21:03.102+0000 W STORAGE  [initandlisten] Recovering data from the last clean checkpoint.
+2018-11-06T08:21:03.110+0000 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=487M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+2018-11-06T08:21:16.268+0000 I STORAGE  [initandlisten] WiredTiger message [1541492476:268955][1:0x7fe7ba652a00], txn-recover: Main recovery loop: starting at 17/256
+2018-11-06T08:21:16.355+0000 I STORAGE  [initandlisten] WiredTiger message [1541492476:355723][1:0x7fe7ba652a00], txn-recover: Recovering log 17 through 18
+2018-11-06T08:21:17.246+0000 I STORAGE  [initandlisten] WiredTiger message [1541492477:246760][1:0x7fe7ba652a00], file:index-3--3515674567437378040.wt, txn-recover: Recovering log 18 through 18
+2018-11-06T08:21:17.302+0000 I STORAGE  [initandlisten] WiredTiger message [1541492477:302015][1:0x7fe7ba652a00], file:index-3--3515674567437378040.wt, txn-recover: Set global recovery timestamp: 0
+2018-11-06T08:21:17.332+0000 I RECOVERY [initandlisten] WiredTiger recoveryTimestamp. Ts: Timestamp(0, 0)
+2018-11-06T08:21:17.435+0000 W STORAGE  [initandlisten] Detected configuration for non-active storage engine mmapv1 when current storage engine is wiredTiger
+2018-11-06T08:21:17.436+0000 W CONTROL  [initandlisten] 
+2018-11-06T08:21:17.437+0000 W CONTROL  [initandlisten] 
+2018-11-06T08:21:17.437+0000 I CONTROL  [initandlisten] 
+2018-11-06T08:21:17.549+0000 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
+2018-11-06T08:21:17.555+0000 I NETWORK  [initandlisten] waiting for connections on port 27017
+2018-11-06T08:21:17.942+0000 I NETWORK  [listener] connection accepted from 172.22.0.4:50982 #1 (1 connection now open)
+2018-11-06T08:21:17.953+0000 I NETWORK  [conn1] end connection 172.22.0.4:50982 (0 connections now open)
+2018-11-06T08:21:18.027+0000 I FTDC     [ftdc] Unclean full-time diagnostic data capture shutdown detected, found interim file, some metrics may have been lost. OK
+2018-11-06T08:21:19.510+0000 I NETWORK  [listener] connection accepted from 172.22.0.4:50984 #2 (1 connection now open)
+2018-11-06T08:21:19.545+0000 I NETWORK  [conn2] received client metadata from 172.22.0.4:50984 conn2: { driver: { name: "nodejs", version: "2.2.24" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "4.9.93-linuxkit-aufs" }, platform: "Node.js v8.12.0, LE, mongodb-core: 2.1.8" }
+2018-11-06T08:21:19.815+0000 I ACCESS   [conn2] Successfully authenticated as principal root on admin
+2018-11-06T08:21:19.882+0000 I NETWORK  [listener] connection accepted from 172.22.0.4:50986 #3 (2 connections now open)
+2018-11-06T08:21:20.003+0000 I ACCESS   [conn3] Successfully authenticated as principal root on admin
+2018-11-06T08:21:20.010+0000 I NETWORK  [listener] connection accepted from 172.22.0.4:50988 #4 (3 connections now open)
+2018-11-06T08:21:20.204+0000 I ACCESS   [conn4] Successfully authenticated as principal root on admin
+2018-11-06T08:22:24.251+0000 I NETWORK  [listener] connection accepted from 172.22.0.3:37638 #5 (4 connections now open)
+2018-11-06T08:22:24.253+0000 I NETWORK  [listener] connection accepted from 172.22.0.3:37640 #6 (5 connections now open)
+2018-11-06T08:22:24.262+0000 I NETWORK  [conn5] received client metadata from 172.22.0.3:37638 conn5: { driver: { name: "nodejs", version: "3.1.8" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "4.9.93-linuxkit-aufs" }, platform: "Node.js v11.1.0, LE, mongodb-core: 3.1.7" }
+2018-11-06T08:22:24.264+0000 I NETWORK  [conn6] received client metadata from 172.22.0.3:37640 conn6: { driver: { name: "nodejs", version: "3.1.8" }, os: { type: "Linux", name: "linux", architecture: "x64", version: "4.9.93-linuxkit-aufs" }, platform: "Node.js v11.1.0, LE, mongodb-core: 3.1.7" }
+2018-11-06T08:22:24.319+0000 I ACCESS   [conn5] Successfully authenticated as principal loopback-user on loopback-db
+2018-11-06T08:22:24.321+0000 I ACCESS   [conn6] Successfully authenticated as principal loopback-user on loopback-db

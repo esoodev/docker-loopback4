@@ -26,3 +26,6 @@ bundles/
 vendor/pkg/
 pyenv
 Vagrantfile
+
+# Custom ignores
+mongodb/data/db
