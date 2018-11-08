@@ -1,6 +1,6 @@
 # Docker Loopback4
 
-Docker base project for Loopback4 & MySQL.
+Docker base project for Loopback4 & MongoDB.
 
 ## Getting Started
 
